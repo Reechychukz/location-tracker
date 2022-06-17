@@ -22,7 +22,8 @@ npm install
 ```sh
 npm start
 ```
-#API Endpoints
+## API Endpoints
+
 ```sh
 POST Location - http://localhost:3000/api/location/
 PUT Location - http://localhost:3000/api/locations/{id}
