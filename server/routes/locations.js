@@ -19,6 +19,6 @@ route.get('/locations', getAllLocations);
 
 route.get('/locations/:id', getLocationById);
 
-// route.post('/location/distance', calculateDistance);
+route.post('/locations/:id/distance', calculateDistance);
 
 module.exports = route;

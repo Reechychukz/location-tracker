@@ -5,8 +5,10 @@ const path = require('path');
 const createError = require('http-errors');
 let mongoose = require('mongoose');
 const locationsRoute = require('./server/routes/locations');
+const axios = require('axios');
 
 const app = express();
+
 
 mongoose.connect('mongodb://0.0.0.0:27017/ltdb', function(error){
   if(error) console.log(error);
