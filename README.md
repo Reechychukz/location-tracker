@@ -22,11 +22,13 @@ npm install
 ```sh
 npm start
 ```
-
-## Run tests
-
+#API Endpoints
 ```sh
-npm run test
+POST Location - http://localhost:3000/api/location/
+PUT Location - http://localhost:3000/api/locations/{id}
+DELETE Location - http://localhost:3000/api/locations/{id}
+GET Locations - http://localhost:3000/api/locations
+GET Location - http://localhost:3000/api/locations/{id}
 ```
 
 ## Author
