@@ -11,14 +11,29 @@
 
 > A server side application built to calculate the distance between 2 locations using nodejs, expressjs and mongodb
 
-## Install
+## Prerequisites
 
+install npm and node if you don't have
+
+install npm globally
+```sh
+npm install -g npm
+```
+## Run Locally
+
+clone the project
+```sh
+git clone https://github.com/Reechychukz/location-tracker
+```
+go to project directory
+```sh
+cd location-tracker
+```
+install dependencies
 ```sh
 npm install
 ```
-
-## Usage
-
+start the server
 ```sh
 npm start
 ```
