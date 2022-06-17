@@ -1,3 +1,4 @@
+const { model } = require('mongoose');
 const {locationSchema} = require('../model/locationmodel');
 
 
@@ -32,25 +33,25 @@ async function updateLocation(req, res){
     }
 }
 
-// async function deleteLocation(req, res){
-//     try{
-//         const id = req.params.id;
-//         const updatedLocation = req.body;
-//         const options = {new: true};
+async function deleteLocation(req, res){
+    try{
+        const id = req.params.id;
+        const locationToDelete = await locationSchema.findByIdAndDelete(id);
 
-//         const respnse = await locationSchema.findByIdAndDelete(id, updatedLocation, options);
+        res.json({
+            successful: true,
+            message: `Location with id: ${locationToDelete.id} has been deleted.`
+        });
+    }
 
-//         res.send(respnse);
-//     }
-
-//     catch(error){
-//         res.status(400).json({message: error.message});
-//     }
-// }
+    catch(error){
+        res.status(400).json({message: error.message});
+    }
+}
 
 function getAllLocations(req, res, next){
     locationSchema.find({}, '', function(err, records){
-        //showError(err);
+        
         res.json({
             successful: true,
             records
@@ -62,9 +63,7 @@ async function getLocationById(req, res, next){
     
     try{
         const record = await locationSchema.findById(req.params.id);
-        if(record == null){
-            res.status(404).json("Location not found");
-        } 
+        
         res.json({
             successful: true,
             record
@@ -75,4 +74,4 @@ async function getLocationById(req, res, next){
         res.status(500).json({message: error.message});
     }
 }
-module.exports = {createLocation, updateLocation, getAllLocations, getLocationById}
+module.exports = {createLocation, updateLocation, deleteLocation, getAllLocations, getLocationById}

@@ -13,7 +13,7 @@ route.post('/location', createLocation);
 
 route.put('/locations/:id', updateLocation);
 
-// route.delete('/delete', deleteLocation);
+route.delete('/locations/:id', deleteLocation);
 
 route.get('/locations', getAllLocations);
 
