@@ -49,7 +49,7 @@ GET Location - http://localhost:3000/api/locations/{id}
 
 ## Author
 
-👤 **reechychukz**
+👤 **richard chukwuma**
 
 * Twitter: [@reechychukz](https://twitter.com/reechychukz)
 * Github: [@reechychukz](https://github.com/reechychukz)
