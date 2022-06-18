@@ -33,6 +33,16 @@ install dependencies
 ```sh
 npm install
 ```
+navigate to directory
+```sh
+cd utilities/rapidAPI
+```
+enter command to open vs code
+```sh
+code .
+```
+enter a valid apikey
+
 start the server
 ```sh
 npm start
@@ -45,6 +55,7 @@ PUT Location - http://localhost:3000/api/locations/{id}
 DELETE Location - http://localhost:3000/api/locations/{id}
 GET Locations - http://localhost:3000/api/locations
 GET Location - http://localhost:3000/api/locations/{id}
+POST Distance - http://localhost:3000/api/locations/{id}/distance
 ```
 
 ## Author
