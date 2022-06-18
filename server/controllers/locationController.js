@@ -84,11 +84,7 @@ async function calculateDistance(req, res, next) {
 
         const coordinates = locationToFind.coordinates;
 
-        // let userCoordinates = myLocation();
-        // const uC = userCoordinates.then(function(result){
-        //     return result;
-        // });
-
+        
         const coordinates2 = await myLocation()
 
         const distance = solveDistance(coordinates, coordinates2);
