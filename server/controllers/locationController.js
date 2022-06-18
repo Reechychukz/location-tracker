@@ -78,26 +78,20 @@ async function getLocationById(req, res, next) {
     }
 }
 
-async function calculateDistance(req, res) {
+async function calculateDistance(req, res, next) {
     try {
         const locationToFind = await locationSchema.findById(req.params.id); //locationSchema.findById(req.params.id);
 
         const coordinates = locationToFind.coordinates;
 
-        //const coordinates = locationToFind.coordinates;
+        // let userCoordinates = myLocation();
+        // const uC = userCoordinates.then(function(result){
+        //     return result;
+        // });
 
-        //await myLocation()
-        //console.log(coordinates);
+        const coordinates2 = await myLocation()
 
-        let userCoordinates = myLocation();
-        const uC = userCoordinates.then(function(result){
-            console.log(result);
-        })
-
-
-        console.log(myLocation());
-
-        const distance = solveDistance(coordinates, uC);
+        const distance = solveDistance(coordinates, coordinates2);
 
         return res.json({
             successful: true,

@@ -1,4 +1,4 @@
-const axios = require('axios').default;
+const axios = require('axios');
 
 const options = {
     method: 'GET',
@@ -12,15 +12,23 @@ const options = {
 
 async function myLocation(){
     const coordinatesResponse = await axios.request(options);
+    
+
     const {longitude, latitude} = coordinatesResponse.data;
-    //console.log(longitude, latitude);
-    const coordinate2 = {
+    const coordinates = {
         x: longitude,
         y: latitude
     }
-    //console.log(coordinate2);
-    return (coordinate2);
+    
+    return coordinates;
+    
 }
 
 
+// axios.request(options).then(function (response) {
+// 	console.log(response.data);
+// }).catch(function (error) {
+// 	console.error(error);
+// });
 module.exports = {myLocation}
+
